@@ -4,17 +4,15 @@ interface cloneable{
 }
 
 abstract class Warrior implements cloneable{
-    String value;
+    
     public abstract Warrior clone();
 
-    public void echo(){
-        System.out.println("value " + value);
-    }
+  
 
 }
 
 class WarriorV1 extends Warrior{
-
+    private String value;
     public WarriorV1(){
         value = "WarriorV1";
     }
@@ -24,6 +22,10 @@ class WarriorV1 extends Warrior{
        return t;
     }
     
+    public void echo(){
+        System.out.println("value " + value);
+    }
+
 }
 
 
@@ -31,7 +33,6 @@ class Main{
     public static void main(String args[]){
         WarriorV1 wV1 = new WarriorV1();
         wV1.echo();
-        wV1.value = "WarriorV1Clone";
         WarriorV1 t= wV1.clone();
         t.echo();
  
